@@ -1,3 +1,7 @@
+# About Project
+
+Landing pages generator build with React.js (Typescript), Styled-Componets and Strapi CMS.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
