@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
+import { ThemeProps } from "../../styles/theme";
 import * as Heading from "../Heading/style";
 import * as TextComponent from "../TextComponent/style";
 
 const Container = styled.div`
-  ${({ theme }) => css`
+  ${({ theme }: {theme: ThemeProps}) => css`
     ${TextComponent} {
       margin-bottom: ${theme.spacings['2xl']};
     }
@@ -11,11 +12,14 @@ const Container = styled.div`
 `;
 
 export const Grid = styled.div`
-  ${({ theme }) => css`
+  ${({ theme }: {theme: ThemeProps}) => css`
     counter-reset: grid-counter;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: ${theme.spacings.large};
+    gap: ${theme.spacings.lg};
+    @media ${theme.media.lteMedium} {
+      grid-template-columns: 1fr;
+    }
   `}
 `;
 

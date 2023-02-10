@@ -1,7 +1,7 @@
 import MenuLink from "../MenuLink";
 import Container from "./style";
 
-export default function NavLinks({links = []}: { links?: MenuLinkProps[]}) {
+export default function NavLinks({links = []}: NavLinksProps) {
   return (
     <Container aria-label="Main menu">
       {links.map((link) => (

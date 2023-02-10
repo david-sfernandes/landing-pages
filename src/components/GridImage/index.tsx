@@ -12,7 +12,7 @@ export default function GridImage({title, description, grid, background = false}
         </Heading>
         <TextComponent>{description}</TextComponent>
         <Grid>
-          {grid.map((el) => (
+          {grid?.map((el) => (
             <GridElement key={`${el.srcImg}${el.altText}`}>
               <Image src={el.srcImg} alt={el.altText} />
             </GridElement>

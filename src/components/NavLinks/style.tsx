@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
+import { ThemeProps } from "../../styles/theme";
 
 const Container = styled.nav`
-  ${({theme}) => css`
+  ${({theme}: {theme: ThemeProps}) => css`
     display: flex;
     flex-flow: row wrap;
 
-    @media ${theme.media.ltdMedium} {
+    @media ${theme.media.lteMedium} {
       flex-flow: column wrap;
       align-content: center;
     }

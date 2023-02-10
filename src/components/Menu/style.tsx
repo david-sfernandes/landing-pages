@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import * as SectionContainer from '../SectionContainer/style';
 import * as  Heading from '../Heading/style';
+import { ThemeProps } from "../../styles/theme";
 
 interface ContainerInterface {
   visible: boolean;
@@ -12,23 +13,23 @@ const menuVisible = (theme: any) => css`
 `;
 
 const Container = styled.header<ContainerInterface>`
-  ${({theme, visible}) => css`
+  ${({theme, visible}: {theme: ThemeProps, visible: boolean}) => css`
     position: fixed;
     z-index: 5;
     top: 0;
     left:0;
     right:0;
     width: 100%;
-    border-bottom: ${theme.colors.mediumGray};
+    border-bottom: ${theme.colors.gray};
     background: ${theme.colors.white};
     transition: all 300ms ease-in-out;
 
-    > ${SectionContainer} {
+    & > ${SectionContainer.default} {
       padding-top: 0;
       padding-bottom: 0;
     }
 
-    & ${Heading} {
+    & ${Heading.default} {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -39,7 +40,7 @@ const Container = styled.header<ContainerInterface>`
       opacity: 0;
       ${visible && menuVisible(theme)}
 
-      > ${SectionContainer} {
+      > ${SectionContainer.default} {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -48,8 +49,8 @@ const Container = styled.header<ContainerInterface>`
         overflow-y: auto;
       }
 
-      & ${Heading} {
-        padding-bottom: ${theme.spacings.large};
+      & ${Heading.default} {
+        padding-bottom: ${theme.spacings.lg};
         display: flex;
         justify-content: center;
       }
@@ -65,20 +66,20 @@ export const MenuContainer = styled.div`
     @media ${theme.media.lteMedium} {
       display: block;
       text-align: center;
-      padding: ${theme.spacings.xxlarge} 0;
+      padding: ${theme.spacings['2xl']} 0;
     }
   `}
 `;
 
 export const Button = styled.button<ContainerInterface>`
-  ${({ theme, visible }) => css`
+  ${({ theme, visible }: {theme: ThemeProps, visible: boolean}) => css`
     z-index: 6;
     position: fixed;
     top: 2rem;
     right: 2rem;
     width: 4rem;
     height: 4rem;
-    background: ${theme.colors.primaryColor};
+    background: ${theme.colors.primary};
     color: ${theme.colors.white};
     border: none;
     display: none;

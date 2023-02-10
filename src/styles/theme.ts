@@ -1,3 +1,5 @@
+export type ThemeProps = typeof theme;
+
 export const theme = {
   colors: {
     primary: "#0A1128",

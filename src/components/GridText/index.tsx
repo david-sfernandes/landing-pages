@@ -17,7 +17,7 @@ export default function GridText({
         </Heading>
         <TextComponent>{description}</TextComponent>
         <Grid>
-          {grid.map((el) => (
+          {grid?.map((el) => (
             <GridElement key={el.title}>
               <Heading size="md" darkColor={!background} as="h3">
                 {el.title}

@@ -1,7 +1,7 @@
 import Container from "./style";
 
-export default function TextComponent({children}: {children: string;}) {
+export default function TextComponent({children}: {children?: string;}) {
   return (
-    <Container dangerouslySetInnerHTML={{ __html: children }}/>
+    <Container dangerouslySetInnerHTML={{ __html: `${children}` }}/>
   )
 }
